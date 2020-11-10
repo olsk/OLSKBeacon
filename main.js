@@ -107,7 +107,7 @@ const mod = {
 		};
 	},
 
-	OLSKBeaconMoveFunction (param1, param2, param3) {
+	OLSKBeaconNudgeFunction (param1, param2, param3) {
 		if (typeof param1 !== 'string') {
 			throw new Error('OLSKErrorInputNotValid');
 		}
@@ -127,8 +127,8 @@ const mod = {
 				el.style.top = top + 'px';
 			})(
 				document.querySelector(param1),
-				startRect.left - (startRect.left - param2) * pct,
-				startRect.top - (startRect.top - param3) * pct,
+				startRect.left + param2 * pct,
+				startRect.top + param3 * pct,
 			);
 		};
 	},

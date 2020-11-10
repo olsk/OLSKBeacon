@@ -112,28 +112,28 @@ describe('OLSKBeaconClickFunction', function test_OLSKBeaconClickFunction() {
 
 });
 
-describe('OLSKBeaconMoveFunction', function test_OLSKBeaconMoveFunction() {
+describe('OLSKBeaconNudgeFunction', function test_OLSKBeaconNudgeFunction() {
 
 	it('throws if param1 not string', function () {
 		throws(function () {
-			mod.OLSKBeaconMoveFunction(null, Math.random());
+			mod.OLSKBeaconNudgeFunction(null, Math.random());
 		}, /OLSKErrorInputNotValid/);
 	});
 
 	it('throws if param2 not number', function () {
 		throws(function () {
-			mod.OLSKBeaconMoveFunction(Math.random().toString(), null, Math.random());
+			mod.OLSKBeaconNudgeFunction(Math.random().toString(), null, Math.random());
 		}, /OLSKErrorInputNotValid/);
 	});
 
 	it('throws if param2 not number', function () {
 		throws(function () {
-			mod.OLSKBeaconMoveFunction(Math.random().toString(), Math.random(), null);
+			mod.OLSKBeaconNudgeFunction(Math.random().toString(), Math.random(), null);
 		}, /OLSKErrorInputNotValid/);
 	});
 
 	// it('returns function', function() {
-	// 	deepEqual(typeof mod.OLSKBeaconMoveFunction(Math.random().toString(), Math.random().toString()), 'function');
+	// 	deepEqual(typeof mod.OLSKBeaconNudgeFunction(Math.random().toString(), Math.random().toString()), 'function');
 	// });
 
 });
