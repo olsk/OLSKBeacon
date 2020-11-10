@@ -1,7 +1,3 @@
-const uFlatten = function (inputData) {
-	return [].concat.apply([], inputData);
-};
-
 const mod = {
 
 	OLSKBeaconWait (inputData) {
