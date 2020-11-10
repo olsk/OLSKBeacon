@@ -38,6 +38,32 @@ const mod = {
 		};
 	},
 
+	OLSKBeaconMoveFunction (param1, param2, param3) {
+		if (typeof param1 !== 'string') {
+			throw new Error('OLSKErrorInputNotValid');
+		}
+
+		if (typeof param2 !== 'number') {
+			throw new Error('OLSKErrorInputNotValid');
+		}
+
+		if (typeof param3 !== 'number') {
+			throw new Error('OLSKErrorInputNotValid');
+		}
+
+		const startRect = document.querySelector(param1).getBoundingClientRect();
+		return function (pct) {
+			return (function (el, left, top) {
+				el.style.left = left + 'px';
+				el.style.top = top + 'px';
+			})(
+				document.querySelector(param1),
+				startRect.left - (startRect.left - param2) * pct,
+				startRect.top - (startRect.top - param3) * pct,
+			);
+		};
+	},
+
 	_OLSKBeaconAnimate (param1, param2) {
 		if (typeof param1 !== 'function') {
 			throw new Error('OLSKErrorInputNotValid');
