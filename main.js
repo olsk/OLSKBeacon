@@ -80,7 +80,7 @@ const mod = {
 				return
 			}
 
-			if (!state.didTouchUp) {
+			if (!state.didTouchUp && time > 250) {
 				document.querySelector(param2).classList.remove(param3);
 
 				state.didTouchUp = true;
