@@ -34,6 +34,16 @@ const mod = {
 		};
 	},
 
+	_OLSKBeaconFire (el, etype) {
+		if (el.fireEvent) {
+		  return el.fireEvent('on' + etype);
+		}
+
+		const evObj = document.createEvent('Events');
+		evObj.initEvent(etype, true, false);
+		el.dispatchEvent(evObj);
+	},
+
 	OLSKBeaconClickFunction (param1, param2, param3) {
 		if (typeof param1 !== 'string') {
 			throw new Error('OLSKErrorInputNotValid');
@@ -59,15 +69,7 @@ const mod = {
 			const time = performance.now() - start;
 
 			if (!state.didClick) {
-				(function (el, etype) {
-					if (el.fireEvent) {
-					  return el.fireEvent('on' + etype);
-					}
-
-					const evObj = document.createEvent('Events');
-					evObj.initEvent(etype, true, false);
-					el.dispatchEvent(evObj);
-				})(document.querySelector(param1), 'click');
+				mod._OLSKBeaconFire(document.querySelector(param1), 'click');
 
 				state.didClick = true;
 			}
