@@ -72,6 +72,32 @@ describe('OLSKBeaconPointFunction', function OLSKBeaconPointFunction() {
 
 });
 
+describe('OLSKBeaconClickFunction', function OLSKBeaconClickFunction() {
+
+	it('throws if param1 not string', function () {
+		throws(function () {
+			mod.OLSKBeaconClickFunction(null, Math.random().toString(), Math.random().toString());
+		}, /OLSKErrorInputNotValid/);
+	});
+
+	it('throws if param2 not string', function () {
+		throws(function () {
+			mod.OLSKBeaconClickFunction(Math.random().toString(), null), Math.random().toString();
+		}, /OLSKErrorInputNotValid/);
+	});
+
+	it('throws if param3 not string', function () {
+		throws(function () {
+			mod.OLSKBeaconClickFunction(Math.random().toString(), null, Math.random().toString());
+		}, /OLSKErrorInputNotValid/);
+	});
+
+	// it('returns function', function() {
+	// 	deepEqual(typeof mod.OLSKBeaconClickFunction(Math.random().toString(), Math.random().toString()), 'function');
+	// });
+
+});
+
 describe('OLSKBeaconMoveFunction', function OLSKBeaconMoveFunction() {
 
 	it('throws if param1 not string', function () {
