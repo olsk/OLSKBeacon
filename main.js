@@ -6,7 +6,7 @@ const mod = {
 		}
 
 		return new Promise(function (resolve) {
-			return setTimeout(resolve, inputData || 1000);
+			return setTimeout(resolve, inputData || 650);
 		});
 	},
 
