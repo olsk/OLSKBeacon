@@ -2,7 +2,7 @@ const { throws, deepEqual } = require('assert');
 
 const mod = require('./main.js');
 
-describe('OLSKBeaconWait', function OLSKBeaconWait() {
+describe('OLSKBeaconWait', function test_OLSKBeaconWait() {
 
 	it('returns promise', function() {
 		deepEqual(mod.OLSKBeaconWait() instanceof Promise, true);
@@ -52,7 +52,7 @@ describe('OLSKBeaconWait', function OLSKBeaconWait() {
 
 });
 
-describe('OLSKBeaconPointFunction', function OLSKBeaconPointFunction() {
+describe('OLSKBeaconPointFunction', function test_OLSKBeaconPointFunction() {
 
 	it('throws if param1 not string', function () {
 		throws(function () {
@@ -72,7 +72,7 @@ describe('OLSKBeaconPointFunction', function OLSKBeaconPointFunction() {
 
 });
 
-describe('OLSKBeaconClickFunction', function OLSKBeaconClickFunction() {
+describe('OLSKBeaconClickFunction', function test_OLSKBeaconClickFunction() {
 
 	it('throws if param1 not string', function () {
 		throws(function () {
@@ -98,7 +98,7 @@ describe('OLSKBeaconClickFunction', function OLSKBeaconClickFunction() {
 
 });
 
-describe('OLSKBeaconMoveFunction', function OLSKBeaconMoveFunction() {
+describe('OLSKBeaconMoveFunction', function test_OLSKBeaconMoveFunction() {
 
 	it('throws if param1 not string', function () {
 		throws(function () {
