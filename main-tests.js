@@ -52,6 +52,20 @@ describe('OLSKBeaconWait', function test_OLSKBeaconWait() {
 
 });
 
+describe('OLSKBeaconDeferFunction', function test_OLSKBeaconDeferFunction() {
+
+	it('throws if not string', function () {
+		throws(function () {
+			mod.OLSKBeaconDeferFunction(null);
+		}, /OLSKErrorInputNotValid/);
+	});
+
+	// it('returns function', function() {
+	// 	deepEqual(typeof mod.OLSKBeaconDeferFunction(Math.random().toString()), 'function');
+	// });
+
+});
+
 describe('OLSKBeaconPointFunction', function test_OLSKBeaconPointFunction() {
 
 	it('throws if param1 not string', function () {

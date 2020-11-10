@@ -10,6 +10,21 @@ const mod = {
 		});
 	},
 
+	OLSKBeaconDeferFunction (inputData) {
+		if (typeof inputData !== 'string') {
+			throw new Error('OLSKErrorInputNotValid');
+		}
+
+		return new Promise(function (resolve) {
+			const item = document.querySelector(inputData);
+
+			let listener = item.addEventListener('click', function () {
+				item.removeEventListener('click', listener);
+				resolve();
+			});
+		});
+	},
+
 	OLSKBeaconPointFunction (param1, param2) {
 		if (typeof param1 !== 'string') {
 			throw new Error('OLSKErrorInputNotValid');
