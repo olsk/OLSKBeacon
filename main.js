@@ -118,6 +118,21 @@ const mod = {
 		};
 	},
 
+	OLSKBeaconFillFunction (param1, param2) {
+		if (typeof param1 !== 'string') {
+			throw new Error('OLSKErrorInputNotValid');
+		}
+
+		if (typeof param2 !== 'string') {
+			throw new Error('OLSKErrorInputNotValid');
+		}
+
+		return function (pct) {
+			document.querySelector(param1).value = param2.slice(0, param2.length * pct);
+			mod._OLSKBeaconFire(document.querySelector(param1), 'input');
+		};
+	},
+
 	_OLSKBeaconAnimate (param1, param2) {
 		if (typeof param1 !== 'function') {
 			throw new Error('OLSKErrorInputNotValid');

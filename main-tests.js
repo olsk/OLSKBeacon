@@ -124,6 +124,26 @@ describe('OLSKBeaconMoveFunction', function test_OLSKBeaconMoveFunction() {
 
 });
 
+describe('OLSKBeaconFillFunction', function test_OLSKBeaconFillFunction() {
+
+	it('throws if param1 not string', function () {
+		throws(function () {
+			mod.OLSKBeaconFillFunction(null, Math.random().toString());
+		}, /OLSKErrorInputNotValid/);
+	});
+
+	it('throws if param2 not string', function () {
+		throws(function () {
+			mod.OLSKBeaconFillFunction(Math.random().toString(), null);
+		}, /OLSKErrorInputNotValid/);
+	});
+
+	// it('returns function', function() {
+	// 	deepEqual(typeof mod.OLSKBeaconFillFunction(Math.random().toString(), Math.random().toString()), 'function');
+	// });
+
+});
+
 describe('_OLSKBeaconAnimate', function _OLSKBeaconAnimate() {
 
 	it('throws if param1 not function', function () {
